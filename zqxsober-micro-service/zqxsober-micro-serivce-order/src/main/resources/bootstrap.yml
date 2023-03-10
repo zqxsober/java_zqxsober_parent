@@ -1,0 +1,20 @@
+server:
+  port: ${PORT:8102}
+  servlet:
+    context-path: /
+spring:
+  application:
+    name: zqxsober-micro-service-order
+  profiles:
+    active: dev
+logging:
+  config: classpath:logback/logback-spring.xml
+  level:
+    org.org.springframework: info
+    com.alibaba.nacos.client.config.impl: error
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://81.68.249.232:18080/eureka/
+      instance:
+        ip-address: ${DOCKER_IP:81.68.249.232}

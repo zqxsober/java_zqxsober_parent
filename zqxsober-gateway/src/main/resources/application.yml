@@ -1,0 +1,11 @@
+spring:
+  cloud:
+    gateway:
+      routes:
+        - id: zqxsober-application-app
+          uri: lb://zqxsober-application-app
+          predicates:
+            - Path=/zqxsober-application-app/**
+          filters:
+            - Permission
+            - RewritePath=/zqxsober-application-app/(?<segment>.*), /$\{segment}

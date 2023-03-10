@@ -1,0 +1,19 @@
+server:
+  port: ${PORT:8002}
+  servlet:
+    context-path: /
+spring:
+  application:
+    name: zqxsober-application-h5
+  profiles:
+    active: dev
+logging:
+  config: classpath:logback/logback-spring.xml
+  level:
+    org.org.springframework: info
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://81.68.249.232:18080/eureka/
+      instance:
+        ip-address: ${DOCKER_IP:81.68.249.232}

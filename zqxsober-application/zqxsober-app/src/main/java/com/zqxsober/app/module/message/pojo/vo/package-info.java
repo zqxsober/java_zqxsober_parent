@@ -1,0 +1,1 @@
+package com.zqxsober.app.module.message.pojo.vo;
