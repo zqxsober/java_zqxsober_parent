@@ -25,7 +25,7 @@ public class UserController {
 
     @GetMapping("/getUser")
     @ApiOperation(value = "获取会员信息", response = String.class)
-    public ResponseEntity<?> getUser(@RequestParam String userId){
+    public ResponseEntity<?> getUser(@RequestParam(required = false) String userId){
         return ResponseEntity.ok("user info...");
     }
 
