@@ -1,6 +1,7 @@
 package com.zqxosber.web.module.user.controller;
 
 import cn.hutool.core.bean.BeanUtil;
+import com.zqxosber.web.support.BaseController;
 import com.zqxsober.api.user.pojo.bo.UserInfoBo;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
@@ -20,13 +21,13 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping("/user")
 @RequiredArgsConstructor
-public class UserController {
+public class UserController extends BaseController {
 
 
     @GetMapping("/getUser")
     @ApiOperation(value = "获取会员信息", response = String.class)
     public ResponseEntity<?> getUser(@RequestParam(required = false) String userId){
-        return ResponseEntity.ok("user info...");
+        return ResponseEntity.ok(super.getUserInfo(userId));
     }
 
 }
