@@ -9,3 +9,10 @@ spring:
           filters:
             - Permission
             - RewritePath=/zqxsober-application-app/(?<segment>.*), /$\{segment}
+        - id: zqxsober-application-h5
+          uri: lb://zqxsober-application-h5
+          predicates:
+            - Path=/zqxsober-application-h5/**
+          filters:
+            - Permission
+            - RewritePath=/zqxsober-application-h5/(?<segment>.*), /$\{segment}
