@@ -1,8 +1,7 @@
 package com.zqxosber.web.support;
 
 import com.zqxsober.api.user.api.UserApi;
-import com.zqxsober.api.user.pojo.bo.UserInfoBo;
-import lombok.RequiredArgsConstructor;
+import com.zqxsober.api.user.pojo.bo.user.UserInfoBo;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Component;
 

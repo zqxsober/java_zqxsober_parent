@@ -1,4 +1,4 @@
-package com.zqxsober.api.user.pojo.bo;
+package com.zqxsober.api.user.pojo.bo.user;
 
 import lombok.Data;
 import lombok.experimental.Accessors;

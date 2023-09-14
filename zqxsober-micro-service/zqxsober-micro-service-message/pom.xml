@@ -22,7 +22,7 @@
         <!--模块依赖-->
         <dependency>
             <groupId>com.zqxsober</groupId>
-            <artifactId>zqxsober-api-message</artifactId>
+            <artifactId>zqxsober-micro-service-api-message</artifactId>
             <version>${project.version}</version>
         </dependency>
 
