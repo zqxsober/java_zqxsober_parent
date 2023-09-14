@@ -4,7 +4,7 @@ import cn.hutool.core.bean.BeanUtil;
 import cn.hutool.core.date.DateUtil;
 import cn.hutool.core.util.StrUtil;
 import com.zqxsober.api.user.api.UserApi;
-import com.zqxsober.api.user.pojo.bo.UserInfoBo;
+import com.zqxsober.api.user.pojo.bo.user.UserInfoBo;
 import com.zqxsober.app.module.user.pojo.vo.UserInfoVO;
 import com.zqxsober.common.redis.constant.RedisKeyConstant;
 import io.swagger.annotations.Api;

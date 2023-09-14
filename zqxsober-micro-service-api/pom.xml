@@ -9,12 +9,12 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>zqxsober-api</artifactId>
+    <artifactId>zqxsober-micro-service-api</artifactId>
     <packaging>pom</packaging>
     <modules>
-        <module>zqxsober-api-user</module>
-        <module>zqxsober-api-order</module>
-        <module>zqxsober-api-message</module>
+        <module>zqxsober-micro-service-api-user</module>
+        <module>zqxsober-micro-service-api-order</module>
+        <module>zqxsober-micro-service-api-message</module>
     </modules>
 
     <properties>
