@@ -35,6 +35,11 @@
             <artifactId>zqxsober-common-util</artifactId>
             <version>${project.version}</version>
         </dependency>
+        <dependency>
+            <groupId>com.zqxsober</groupId>
+            <artifactId>zqxsober-common-redis</artifactId>
+            <version>${project.version}</version>
+        </dependency>
 
         <!--nacos-discovery-->
         <dependency>
