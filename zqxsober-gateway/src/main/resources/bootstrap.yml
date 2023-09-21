@@ -10,15 +10,16 @@ spring:
   cloud:
     nacos:
       config:
-        username: zqxsober
-        password: zqxsober
         server-addr: 81.68.249.232:8848
-        namespace: c6415e65-0281-4891-9b0a-1d501538974a
+        namespace: be03bf80-3f27-4a1d-a5c4-7dc7f38a11c9
+        username: ENC(b+VEXDX5rvOsLMJddOI6WEszcOZCtWc6ict7lvnrzvg=)
+        password: ENC(b+VEXDX5rvOsLMJddOI6WEszcOZCtWc6ict7lvnrzvg=)
         file-extension: yaml
+        refresh-enabled: true
         shared-configs:
-          - dataId: nacos-discovery.yaml
+          - dataId: ${spring.application.name}-application-dev.yaml
             refresh: true
-          - dataId: redis-config.yaml
+          - dataId: ${spring.application.name}-service-configuration-dev.yaml
             refresh: true
 logging:
   config: classpath:logback/logback-spring.xml
