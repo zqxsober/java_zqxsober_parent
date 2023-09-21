@@ -24,7 +24,7 @@
     <packaging>pom</packaging>
 
     <properties>
-        <jasypt.spring.boot.starter.version>3.0.3</jasypt.spring.boot.starter.version>
+        <jasypt.spring.boot.starter.version>3.0.5</jasypt.spring.boot.starter.version>
         <elasticsearch.version>7.6.2</elasticsearch.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
@@ -274,10 +274,18 @@
                 <version>${poi-version}</version>
             </dependency>
 
+            <!--slf4j-->
             <dependency>
                 <groupId>org.slf4j</groupId>
                 <artifactId>slf4j-api</artifactId>
                 <version>1.7.30</version>
+            </dependency>
+
+            <!--jasypt-->
+            <dependency>
+                <groupId>com.github.ulisesbocchio</groupId>
+                <artifactId>jasypt-spring-boot-starter</artifactId>
+                <version>${jasypt.spring.boot.starter.version}</version>
             </dependency>
 
         </dependencies>
