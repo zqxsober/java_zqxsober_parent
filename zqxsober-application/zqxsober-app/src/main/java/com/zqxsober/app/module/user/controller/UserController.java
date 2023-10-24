@@ -51,7 +51,6 @@ public class UserController {
         String key = RedisKeyConstant.SystemConstant.PREFIX_KET_APP + StrUtil.DOT + "sign" + StrUtil.DOT + userId + StrUtil.DOT + DateUtil.format(today, "yyyy-MM");
         int day = DateUtil.dayOfMonth(today);
         Boolean flag = stringRedisTemplate.opsForValue().setBit(key, day, true);
-
         Long count = stringRedisTemplate.execute((RedisCallback<Long>) redisConnection -> redisConnection.bitCount(key.getBytes()));
         assert count != null;
         System.out.println(count.intValue());
