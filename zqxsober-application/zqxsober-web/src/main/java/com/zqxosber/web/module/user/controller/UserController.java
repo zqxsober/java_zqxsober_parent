@@ -1,7 +1,7 @@
 package com.zqxosber.web.module.user.controller;
 
 import com.zqxosber.web.support.BaseController;
-import com.zqxsober.api.user.pojo.bo.user.UserInfoBo;
+import com.zqxsober.api.order.pojo.bo.order.UserInfoBo;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import lombok.RequiredArgsConstructor;

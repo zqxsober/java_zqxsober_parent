@@ -1,4 +1,4 @@
-package com.zqxsober.api.user.pojo.bo.user;
+package com.zqxsober.api.order.pojo.bo.order;
 
 import org.mapstruct.Mapper;
 

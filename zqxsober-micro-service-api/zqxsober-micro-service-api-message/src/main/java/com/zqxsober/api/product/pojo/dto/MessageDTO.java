@@ -1,10 +1,8 @@
-package com.zqxsober.api.message.pojo.dto;
+package com.zqxsober.api.product.pojo.dto;
 
 import com.zqxsober.common.mq.emums.MqTopicEnum;
 import lombok.Builder;
 import lombok.ToString;
-
-import javax.validation.constraints.NotNull;
 
 /**
  * @Author: zqxsober

@@ -1,6 +1,6 @@
-package com.zqxsober.api.message.api;
+package com.zqxsober.api.product.api;
 
-import com.zqxsober.api.message.pojo.dto.MessageDTO;
+import com.zqxsober.api.product.pojo.dto.MessageDTO;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;

@@ -1,6 +1,6 @@
-package com.zqxsober.api.user.api;
+package com.zqxsober.api.order.api;
 
-import com.zqxsober.api.user.pojo.bo.user.UserInfoBo;
+import com.zqxsober.api.order.pojo.bo.order.UserInfoBo;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
