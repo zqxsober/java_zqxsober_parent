@@ -5,7 +5,7 @@
     <parent>
         <artifactId>zqxsober-parent</artifactId>
         <groupId>com.zqxsober</groupId>
-        <version>1.0.0</version>
+        <version>1.0.0-SNAPSHOT</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
@@ -16,6 +16,8 @@
         <module>zqxsober-common-redis</module>
         <module>zqxsober-common-mq</module>
         <module>zqxsober-common-generator</module>
+        <module>zqxsober-common-util</module>
+        <module>zqxsober-common-core</module>
     </modules>
 
     <properties>

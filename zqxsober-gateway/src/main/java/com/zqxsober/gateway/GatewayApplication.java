@@ -1,6 +1,5 @@
 package com.zqxsober.gateway;
 
-import com.ulisesbocchio.jasyptspringboot.annotation.EnableEncryptableProperties;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
@@ -15,7 +14,6 @@ import org.springframework.web.client.RestTemplate;
  * @Date: 2022-07-19 13:50
  */
 @EnableDiscoveryClient
-@EnableEncryptableProperties
 @SpringBootApplication(scanBasePackages = {"com.zqxsober"}, exclude= {DataSourceAutoConfiguration.class})
 public class GatewayApplication {
 

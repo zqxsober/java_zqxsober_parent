@@ -10,18 +10,25 @@ import com.zqxsober.common.redis.constant.RedisKeyConstant;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.data.redis.core.RedisCallback;
 import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 /**
  * @Author: zqxsober
  * @Description: UserController 类
  * @Date: 2022-07-19 09:43
  */
+@Slf4j
 @Api(tags = "会员接口")
 @RestController
 @RequestMapping("/user")
@@ -30,12 +37,13 @@ public class UserController {
 
     private final UserApi userApi;
 
-    private final StringRedisTemplate stringRedisTemplate;
+    @Value("${spring.application.name}")
+    private String applicationName;
 
 
-    @GetMapping("/getUser")
+    @GetMapping("/getById")
     @ApiOperation(value = "获取会员信息", response = UserInfoVO.class)
-    public ResponseEntity<UserInfoVO> getUser(@RequestParam String userId){
+    public ResponseEntity<?> getById(@RequestParam String userId){
         ResponseEntity<UserInfoBo> response = userApi.getUserInfo(userId);
         if (response.getStatusCode().isError()) {
             throw new NullPointerException("找不到该会员");
@@ -43,18 +51,16 @@ public class UserController {
         return ResponseEntity.ok(BeanUtil.copyProperties(response.getBody(), UserInfoVO.class));
     }
 
+    @GetMapping("/list")
+    @ApiOperation(value = "获取会员列表", response = UserInfoVO.class)
+    public ResponseEntity<?> list(){
+        List<UserInfoVO> list = Stream.of(new UserInfoVO( "张三", "1", 18L),
+                new UserInfoVO( "李四", "2", 18L),
+                new UserInfoVO( "王五", "3", 18L))
+                .collect(Collectors.toList());
+        log.info("Hello Nacos Discovery " + applicationName + " registered successfully!" );
 
-    @PostMapping("/signTest")
-    @ApiOperation(value = "获取会员信息", response = UserInfoVO.class)
-    public ResponseEntity<?> signTest(@RequestParam("userId") String userId, @RequestParam("date") String date) {
-        Date today = StrUtil.isBlank(date) ? DateUtil.date() : DateUtil.parseDate(date);
-        String key = RedisKeyConstant.SystemConstant.PREFIX_KET_APP + StrUtil.DOT + "sign" + StrUtil.DOT + userId + StrUtil.DOT + DateUtil.format(today, "yyyy-MM");
-        int day = DateUtil.dayOfMonth(today);
-        Boolean flag = stringRedisTemplate.opsForValue().setBit(key, day, true);
-        Long count = stringRedisTemplate.execute((RedisCallback<Long>) redisConnection -> redisConnection.bitCount(key.getBytes()));
-        assert count != null;
-        System.out.println(count.intValue());
-        return ResponseEntity.ok(flag);
+        return ResponseEntity.ok(list);
     }
 
 

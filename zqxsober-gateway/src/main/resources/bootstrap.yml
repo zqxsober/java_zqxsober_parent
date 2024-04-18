@@ -12,14 +12,12 @@ spring:
       config:
         server-addr: 81.68.249.232:8848
         namespace: be03bf80-3f27-4a1d-a5c4-7dc7f38a11c9
-        username: ENC(b+VEXDX5rvOsLMJddOI6WEszcOZCtWc6ict7lvnrzvg=)
-        password: ENC(b+VEXDX5rvOsLMJddOI6WEszcOZCtWc6ict7lvnrzvg=)
+        username: zqxsober
+        password: zqxsober
         file-extension: yaml
         refresh-enabled: true
         shared-configs:
-          - dataId: ${spring.application.name}-application-dev.yaml
-            refresh: true
-          - dataId: ${spring.application.name}-service-configuration-dev.yaml
+          - dataId: ${spring.application.name}-application-${spring.profiles.active}.yaml
             refresh: true
 logging:
   config: classpath:logback/logback-spring.xml
