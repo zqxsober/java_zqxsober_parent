@@ -37,7 +37,7 @@ public class IPUtil {
             ip = request.getRemoteAddr();
         }
 
-        if (StringUtils.isNotBlank(ip) && ip.indexOf(",") != -1) {
+        if (StringUtils.isNotBlank(ip) && ip.contains(",")) {
             ip = ip.split(",")[0];
         }
 
