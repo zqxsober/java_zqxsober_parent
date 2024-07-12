@@ -5,7 +5,7 @@
     <parent>
         <artifactId>zqxsober-micro-service</artifactId>
         <groupId>com.zqxsober</groupId>
-        <version>1.0.0</version>
+        <version>1.0.0-SNAPSHOT</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
@@ -22,17 +22,22 @@
         <!--模块依赖-->
         <dependency>
             <groupId>com.zqxsober</groupId>
-            <artifactId>zqxsober-common</artifactId>
-            <version>${project.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>com.zqxsober</groupId>
             <artifactId>zqxsober-micro-service-api-user</artifactId>
             <version>${project.version}</version>
         </dependency>
         <dependency>
             <groupId>com.zqxsober</groupId>
             <artifactId>zqxsober-common-util</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.zqxsober</groupId>
+            <artifactId>zqxsober-common-redis</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.zqxsober</groupId>
+            <artifactId>zqxsober-common-core</artifactId>
             <version>${project.version}</version>
         </dependency>
 
@@ -149,6 +154,12 @@
             <groupId>cn.hutool</groupId>
             <artifactId>hutool-all</artifactId>
             <version>${hutool-version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.xuxueli</groupId>
+            <artifactId>xxl-job-core</artifactId>
+            <version>${xxl.job-version}</version>
         </dependency>
 
     </dependencies>

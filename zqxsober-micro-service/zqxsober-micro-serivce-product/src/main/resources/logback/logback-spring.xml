@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration scan="true" scanPeriod="6000">
+
+    <!-- 此xml在spring-boot-2.0.5.RELEASE.jar里 -->
+    <include resource="org/springframework/boot/logging/logback/defaults.xml" />
+    <!--<include resource="org/springframework/boot/logging/logback/console-appender.xml" />-->
+
+    <springProperty scope="context" name="logName" source="spring.application.name" defaultValue="localhost.log"/>
+    <property name="APP_NAME" value="${logName}" />
+    <property name="LOG_HOME" value="./logs/" />
+    <springProfile name="local">
+        <property name="LOG_HOME" value="./logs/" />
+    </springProfile>
+    <springProfile name="dev">
+        <property name="LOG_HOME" value="./logs/" />
+    </springProfile>
+    <springProfile name="test">
+        <property name="LOG_HOME" value="./logs/" />
+    </springProfile>
+    <springProfile name="prod">
+        <property name="LOG_HOME" value="./logs/" />
+    </springProfile>
+
+    <!-- 控制台输出 -->
+    <appender name="stdout" class="ch.qos.logback.core.ConsoleAppender">
+        <!--默认就是 PatternLayoutEncoder -->
+        <encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
+            <pattern>%highlight([%-5level]) %d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] [${logName},%X{X-B3-TraceId:-},%X{X-B3-SpanId:-},%X{X-Span-Export:-}]  %-16.64logger{64} (%line\)=> %highlight(%n%msg%n)</pattern>
+            <!--<pattern>${CONSOLE_LOG_PATTERN}</pattern>-->
+            <charset>UTF-8</charset>
+        </encoder>
+    </appender>
+
+    <!-- 根据时间和单文件大小来制定滚动策略 -->
+    <appender name="sizeTimeRollingFile"  class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>${LOG_HOME}/${APP_NAME}.log</file>
+        <!--<File>logs/test.log</File>-->
+        <!-- 每日一更，讲每天的日志按月份划分存储在不同的路径下 -->
+        <rollingPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
+            <fileNamePattern>${LOG_HOME}/${APP_NAME}_history/%d{MM-yyyy,aux}/%d{MM-dd-yyyy}-%i.log.gz</fileNamePattern>
+            <!-- 每个文件最大存储量 -->
+            <maxFileSize>80MB</maxFileSize>
+            <!-- 可选节点，声明归档日志最大保留时间，这里根据日期，则只保留60天 -->
+            <maxHistory>60</maxHistory>
+            <!-- 可选节点，归档日志的最大存储量 -->
+            <totalSizeCap>20GB</totalSizeCap>
+        </rollingPolicy>
+        <encoder>
+            <!--<pattern>[%-5level] %d{MM-dd-yyyy HH:mm:ss.SSS} [%thread] %-16.64logger{64} -(%line\)&ndash;&gt; %n%msg%n</pattern>-->
+            <pattern>${FILE_LOG_PATTERN}</pattern>
+            <charset>UTF-8</charset>
+        </encoder>
+    </appender>
+
+    <!-- addtivity: 是否向上级loger传递打印信息 -->
+    <!--<logger name="com.hwcs.fn.mapper" level="debug" additivity="true" />-->
+    <!--<logger name="org.springframework.jdbc" level="debug" additivity="true" />-->
+
+    <root level="info">
+        <appender-ref ref="sizeTimeRollingFile"/>
+        <appender-ref ref="stdout"/>
+    </root>
+</configuration>

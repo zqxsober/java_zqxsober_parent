@@ -1,7 +1,7 @@
 package com.zqxosber.web.support;
 
-import com.zqxsober.api.user.api.UserApi;
-import com.zqxsober.api.user.pojo.bo.user.UserInfoBo;
+import com.zqxsober.api.order.api.UserApi;
+import com.zqxsober.api.order.pojo.bo.order.UserInfoBo;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Component;
 

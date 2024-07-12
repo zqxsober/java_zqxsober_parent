@@ -6,20 +6,21 @@ import org.springframework.cloud.gateway.filter.factory.AbstractGatewayFilterFac
 import org.springframework.http.server.reactive.ServerHttpRequest;
 import org.springframework.stereotype.Component;
 
+
 /**
  * 权限的网关校验过滤器（针对于部分路由，非全局过滤器）
  * <p>
  * ps: GatewayFilterFactory结尾的过滤器可以在application.yml中配置
  *
- * @author zhengw
- * @Date 2019年12月28日16:56:55
+ * @author zqxsoebr
+ * @Date 2023年09月21日16:56:55
  */
 
 /**
  * @Author: zqxsober
  * @Description: AppApplication 类，GatewayFilterFactory结尾的过滤器可以在application.yml中配置
  * 权限的网关校验过滤器（针对于部分路由，非全局过滤器）
- * @Date: 2022-07-19 09:35
+ * @Date: 2023年09月21日16:56:55
  */
 @Component
 public class PermissionGatewayFilterFactory extends AbstractGatewayFilterFactory {

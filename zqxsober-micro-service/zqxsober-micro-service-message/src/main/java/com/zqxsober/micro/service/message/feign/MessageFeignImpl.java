@@ -1,7 +1,7 @@
 package com.zqxsober.micro.service.message.feign;
 
-import com.zqxsober.api.message.api.MessageApi;
-import com.zqxsober.api.message.pojo.dto.MessageDTO;
+import com.zqxsober.api.product.api.MessageApi;
+import com.zqxsober.api.product.pojo.dto.MessageDTO;
 import com.zqxsober.micro.service.message.components.MessageComponent;
 import lombok.RequiredArgsConstructor;
 import org.springframework.cloud.context.config.annotation.RefreshScope;

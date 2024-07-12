@@ -2,8 +2,8 @@ package com.zqxsober.micro.service.user.feign;
 
 import cn.hutool.core.bean.BeanUtil;
 import cn.hutool.core.date.DateUtil;
-import com.zqxsober.api.user.api.UserApi;
-import com.zqxsober.api.user.pojo.bo.user.UserInfoBo;
+import com.zqxsober.api.order.api.UserApi;
+import com.zqxsober.api.order.pojo.bo.order.UserInfoBo;
 import com.zqxsober.micro.service.user.pojo.po.UserBase;
 import com.zqxsober.micro.service.user.service.UserBaseService;
 import lombok.RequiredArgsConstructor;
