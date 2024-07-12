@@ -7,6 +7,7 @@
         <module>zqxsober-application</module>
         <module>zqxsober-common</module>
         <module>zqxsober-gateway</module>
+        <module>zqxsober-job</module>
         <module>zqxsober-micro-service</module>
         <module>zqxsober-micro-service-api</module>
     </modules>
@@ -87,6 +88,8 @@
         <easyexcel-version>3.3.2</easyexcel-version>
         <poi-version>4.1.2</poi-version>
         <javax.servlet-version>4.0.1</javax.servlet-version>
+        <xxl.job-version>2.4.1</xxl.job-version>
+        <slf4j-api.version>2.0.13</slf4j-api.version>
     </properties>
 
     <dependencyManagement>
@@ -261,7 +264,7 @@
             <dependency>
                 <groupId>org.slf4j</groupId>
                 <artifactId>slf4j-api</artifactId>
-                <version>1.7.30</version>
+                <version>${slf4j-api.version}</version>
             </dependency>
 
             <!--jasypt-->
@@ -276,6 +279,13 @@
                 <groupId>javax.servlet</groupId>
                 <artifactId>javax.servlet-api</artifactId>
                 <version>${javax.servlet-version}</version>
+            </dependency>
+
+            <!--xxl-job-->
+            <dependency>
+                <groupId>com.xuxueli</groupId>
+                <artifactId>xxl-job-core</artifactId>
+                <version>${xxl.job-version}</version>
             </dependency>
 
         </dependencies>

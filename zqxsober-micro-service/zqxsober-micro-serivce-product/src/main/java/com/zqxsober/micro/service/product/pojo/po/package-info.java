@@ -1,1 +1,0 @@
-package com.zqxsober.micro.service.product.pojo.po;
