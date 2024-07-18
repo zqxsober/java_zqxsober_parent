@@ -1,24 +1,17 @@
 package com.zqxsober.app.module.user.controller;
 
 import cn.hutool.core.bean.BeanUtil;
-import cn.hutool.core.date.DateUtil;
-import cn.hutool.core.util.StrUtil;
 import com.zqxsober.api.order.api.UserApi;
 import com.zqxsober.api.order.pojo.bo.order.UserInfoBo;
 import com.zqxsober.app.module.user.pojo.vo.UserInfoVO;
-import com.zqxsober.common.redis.constant.RedisKeyConstant;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.data.redis.core.RedisCallback;
-import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
