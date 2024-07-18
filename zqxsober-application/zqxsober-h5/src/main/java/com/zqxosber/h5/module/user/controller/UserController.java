@@ -22,7 +22,7 @@ public class UserController {
 
     @GetMapping("/get")
     @ApiOperation(value = "获取会员信息", response = String.class)
-    public ResponseEntity<?> getUser(){
+    public ResponseEntity<?> getUser() {
         return ResponseEntity.ok("user info...");
     }
 

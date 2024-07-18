@@ -10,15 +10,14 @@ spring:
   cloud:
     nacos:
       config:
+        server-addr: 81.68.249.232:8848
+        namespace: be03bf80-3f27-4a1d-a5c4-7dc7f38a11c9
         username: zqxsober
         password: zqxsober
-        server-addr: 81.68.249.232:8848
-        namespace: c6415e65-0281-4891-9b0a-1d501538974a
         file-extension: yaml
+        refresh-enabled: true
         shared-configs:
-          - dataId: nacos-discovery.yaml
-            refresh: true
-          - dataId: redis-config.yaml
+          - dataId: ${spring.application.name}-application-${spring.profiles.active}.yaml
             refresh: true
 logging:
   config: classpath:logback/logback-spring.xml

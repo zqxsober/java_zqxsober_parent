@@ -34,22 +34,12 @@ public class MessageController {
     @ApiOperation(value = "延时消息")
     public ResponseEntity<?> addPoint(@ApiParam("延时时间")@RequestParam Integer seconds,
                                       @ApiParam("消息内容") @RequestParam String content){
-        CompletableFuture.runAsync(() -> messageProducer.delayMsg(MqConstant.Topic.USER_NORMAL_TOPIC, content, (1000L * seconds)), executor)
-                .exceptionally(e -> {
-            log.error("延时消息异常，异常信息：【{}】", e.getMessage());
-            return null;
-        });
         return ResponseEntity.ok(true);
     }
 
     @PostMapping("/normalMsg")
     @ApiOperation(value = "普通消息")
     public ResponseEntity<?> normalMsg(@ApiParam("消息内容") @RequestParam String content){
-        CompletableFuture.runAsync(() -> messageProducer.normalMsg(MqConstant.Topic.USER_NORMAL_TOPIC, content), executor)
-                .exceptionally(e -> {
-                    log.error("延时消息异常，异常信息：【{}】", e.getMessage());
-                    return null;
-                });
         return ResponseEntity.ok(true);
     }
 

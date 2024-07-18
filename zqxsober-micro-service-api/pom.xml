@@ -5,7 +5,7 @@
     <parent>
         <artifactId>zqxsober-parent</artifactId>
         <groupId>com.zqxsober</groupId>
-        <version>1.0.0</version>
+        <version>1.0.0-SNAPSHOT</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
@@ -15,6 +15,7 @@
         <module>zqxsober-micro-service-api-user</module>
         <module>zqxsober-micro-service-api-order</module>
         <module>zqxsober-micro-service-api-message</module>
+        <module>zqxsober-micro-service-api-product</module>
     </modules>
 
     <properties>

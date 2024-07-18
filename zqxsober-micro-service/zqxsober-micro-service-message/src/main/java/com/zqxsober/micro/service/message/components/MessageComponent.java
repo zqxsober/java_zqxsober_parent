@@ -1,8 +1,6 @@
 package com.zqxsober.micro.service.message.components;
 
-import cn.hutool.core.lang.Snowflake;
-import cn.hutool.core.lang.UUID;
-import com.zqxsober.api.message.pojo.dto.MessageDTO;
+import com.zqxsober.api.product.pojo.dto.MessageDTO;
 import com.zqxsober.micro.service.message.pojo.po.MqMessageLog;
 import com.zqxsober.micro.service.message.service.MqMessageLogService;
 import lombok.RequiredArgsConstructor;

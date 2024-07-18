@@ -7,9 +7,9 @@
         <module>zqxsober-application</module>
         <module>zqxsober-common</module>
         <module>zqxsober-gateway</module>
-        <module>zqxsober-micro-service-api</module>
+        <module>zqxsober-job</module>
         <module>zqxsober-micro-service</module>
-        <module>zqxsober-common/zqxsober-common-util</module>
+        <module>zqxsober-micro-service-api</module>
     </modules>
 
     <parent>
@@ -20,11 +20,11 @@
 
     <groupId>com.zqxsober</groupId>
     <artifactId>zqxsober-parent</artifactId>
-    <version>1.0.0</version>
+    <version>1.0.0-SNAPSHOT</version>
     <packaging>pom</packaging>
 
     <properties>
-        <jasypt.spring.boot.starter.version>3.0.3</jasypt.spring.boot.starter.version>
+        <jasypt.spring.boot.starter.version>3.0.5</jasypt.spring.boot.starter.version>
         <elasticsearch.version>7.6.2</elasticsearch.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
@@ -65,7 +65,7 @@
         <mp.version>3.4.2</mp.version>
         <spring.rocketmq.version>2.1.1</spring.rocketmq.version>
         <seata.version>1.4.2</seata.version>
-        <hutool-version>5.8.16</hutool-version>
+        <hutool-version>5.8.25</hutool-version>
         <nacos.vsersion>2.2.5.RELEASE</nacos.vsersion>
         <nacos.client.version>2.0.3</nacos.client.version>
         <apollo.client.verison>1.9.1</apollo.client.verison>
@@ -87,6 +87,9 @@
         <mapstruct-version>1.3.1.Final</mapstruct-version>
         <easyexcel-version>3.3.2</easyexcel-version>
         <poi-version>4.1.2</poi-version>
+        <javax.servlet-version>4.0.1</javax.servlet-version>
+        <xxl.job-version>2.4.1</xxl.job-version>
+        <slf4j-api.version>2.0.13</slf4j-api.version>
     </properties>
 
     <dependencyManagement>
@@ -154,13 +157,6 @@
                 <version>${redisson.version}</version>
             </dependency>
 
-            <!--jedis-->
-            <dependency>
-                <groupId>redis.clients</groupId>
-                <artifactId>jedis</artifactId>
-                <version>${jedis.version}</version>
-            </dependency>
-
             <!-- 常用工具包 -->
             <dependency>
                 <groupId>org.apache.commons</groupId>
@@ -176,11 +172,6 @@
                 <groupId>commons-beanutils</groupId>
                 <artifactId>commons-beanutils</artifactId>
                 <version>${commons-beanutils.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>io.jsonwebtoken</groupId>
-                <artifactId>jjwt</artifactId>
-                <version>${jwt.version}</version>
             </dependency>
 
             <!--反射包-->
@@ -254,11 +245,6 @@
                 <artifactId>mapstruct</artifactId>
                 <version>${mapstruct-version}</version>
             </dependency>
-            <dependency>
-                <groupId>org.mapstruct</groupId>
-                <artifactId>mapstruct-processor</artifactId>
-                <version>${mapstruct-version}</version>
-            </dependency>
 
             <!--EasyExcel-->
             <dependency>
@@ -274,10 +260,32 @@
                 <version>${poi-version}</version>
             </dependency>
 
+            <!--slf4j-->
             <dependency>
                 <groupId>org.slf4j</groupId>
                 <artifactId>slf4j-api</artifactId>
-                <version>1.7.30</version>
+                <version>${slf4j-api.version}</version>
+            </dependency>
+
+            <!--jasypt-->
+            <dependency>
+                <groupId>com.github.ulisesbocchio</groupId>
+                <artifactId>jasypt-spring-boot-starter</artifactId>
+                <version>${jasypt.spring.boot.starter.version}</version>
+            </dependency>
+
+            <!--servlet-->
+            <dependency>
+                <groupId>javax.servlet</groupId>
+                <artifactId>javax.servlet-api</artifactId>
+                <version>${javax.servlet-version}</version>
+            </dependency>
+
+            <!--xxl-job-->
+            <dependency>
+                <groupId>com.xuxueli</groupId>
+                <artifactId>xxl-job-core</artifactId>
+                <version>${xxl.job-version}</version>
             </dependency>
 
         </dependencies>
