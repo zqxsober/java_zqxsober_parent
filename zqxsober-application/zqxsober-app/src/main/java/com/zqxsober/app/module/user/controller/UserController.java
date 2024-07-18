@@ -1,24 +1,17 @@
 package com.zqxsober.app.module.user.controller;
 
 import cn.hutool.core.bean.BeanUtil;
-import cn.hutool.core.date.DateUtil;
-import cn.hutool.core.util.StrUtil;
 import com.zqxsober.api.order.api.UserApi;
 import com.zqxsober.api.order.pojo.bo.order.UserInfoBo;
 import com.zqxsober.app.module.user.pojo.vo.UserInfoVO;
-import com.zqxsober.common.redis.constant.RedisKeyConstant;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.data.redis.core.RedisCallback;
-import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
@@ -43,7 +36,7 @@ public class UserController {
 
     @GetMapping("/getById")
     @ApiOperation(value = "获取会员信息", response = UserInfoVO.class)
-    public ResponseEntity<?> getById(@RequestParam String userId){
+    public ResponseEntity<?> getById(@RequestParam String userId) {
         ResponseEntity<UserInfoBo> response = userApi.getUserInfo(userId);
         if (response.getStatusCode().isError()) {
             throw new NullPointerException("找不到该会员");
@@ -53,12 +46,12 @@ public class UserController {
 
     @GetMapping("/list")
     @ApiOperation(value = "获取会员列表", response = UserInfoVO.class)
-    public ResponseEntity<?> list(){
-        List<UserInfoVO> list = Stream.of(new UserInfoVO( "张三", "1", 18L),
-                new UserInfoVO( "李四", "2", 18L),
-                new UserInfoVO( "王五", "3", 18L))
+    public ResponseEntity<?> list() {
+        List<UserInfoVO> list = Stream.of(new UserInfoVO("张三", "1", 18L),
+                new UserInfoVO("李四", "2", 18L),
+                new UserInfoVO("王五", "3", 18L))
                 .collect(Collectors.toList());
-        log.info("Hello Nacos Discovery " + applicationName + " registered successfully!" );
+        log.info("Hello Nacos Discovery " + applicationName + " registered successfully!");
 
         return ResponseEntity.ok(list);
     }
