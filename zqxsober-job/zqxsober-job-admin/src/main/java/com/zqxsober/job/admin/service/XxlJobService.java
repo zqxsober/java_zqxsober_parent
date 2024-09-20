@@ -1,6 +1,5 @@
 package com.zqxsober.job.admin.service;
 
-
 import com.xxl.job.core.biz.model.ReturnT;
 import com.zqxsober.job.admin.core.model.XxlJobInfo;
 import com.zqxsober.job.admin.core.model.XxlJobUser;
@@ -9,9 +8,9 @@ import java.util.Date;
 import java.util.Map;
 
 /**
- * core job action for xxl-job
- * 
- * @author xuxueli 2016-5-28 15:30:33
+ * @Author: zqxsober
+ * @Description: XxlJobService 类
+ * @Date: 2024-09-20 09:43
  */
 public interface XxlJobService {
 
