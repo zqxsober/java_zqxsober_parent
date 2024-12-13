@@ -62,6 +62,7 @@ public class XxlJobConfig {
         xxlJobSpringExecutor.setAccessToken(accessToken);
         xxlJobSpringExecutor.setLogPath(logPath);
         xxlJobSpringExecutor.setLogRetentionDays(logRetentionDays);
+        logger.info(">>>>>>>>>>> xxl-job config init finish");
         return xxlJobSpringExecutor;
     }
 
