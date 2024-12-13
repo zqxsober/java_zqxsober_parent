@@ -36,7 +36,7 @@ public class UserController {
 
     @GetMapping("/getById")
     @ApiOperation(value = "获取会员信息", response = UserInfoVO.class)
-    public ResponseEntity<?> getById(@RequestParam String userId){
+    public ResponseEntity<?> getById(@RequestParam String userId) {
         ResponseEntity<UserInfoBo> response = userApi.getUserInfo(userId);
         if (response.getStatusCode().isError()) {
             throw new NullPointerException("找不到该会员");
@@ -46,12 +46,12 @@ public class UserController {
 
     @GetMapping("/list")
     @ApiOperation(value = "获取会员列表", response = UserInfoVO.class)
-    public ResponseEntity<?> list(){
-        List<UserInfoVO> list = Stream.of(new UserInfoVO( "张三", "1", 18L),
-                new UserInfoVO( "李四", "2", 18L),
-                new UserInfoVO( "王五", "3", 18L))
+    public ResponseEntity<?> list() {
+        List<UserInfoVO> list = Stream.of(new UserInfoVO("张三", "1", 18L),
+                new UserInfoVO("李四", "2", 18L),
+                new UserInfoVO("王五", "3", 18L))
                 .collect(Collectors.toList());
-        log.info("Hello Nacos Discovery " + applicationName + " registered successfully!" );
+        log.info("Hello Nacos Discovery " + applicationName + " registered successfully!");
 
         return ResponseEntity.ok(list);
     }
