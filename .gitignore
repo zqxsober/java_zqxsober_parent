@@ -3,6 +3,7 @@
 
 # Log file
 *.log
+data
 
 # BlueJ files
 *.ctxt
@@ -46,4 +47,6 @@ hs_err_pid*
 .DS_Store
 /**/.DS_Store
 /.fastRequest/
-.vscode/settings.json
+
+### vscode ###
+.vscode

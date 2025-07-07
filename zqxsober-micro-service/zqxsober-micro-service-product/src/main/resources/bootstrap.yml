@@ -1,0 +1,25 @@
+server:
+  port: ${PORT:8103}
+  servlet:
+    context-path: /
+spring:
+  application:
+    name: zqxsober-micro-service-product
+  profiles:
+    active: dev
+  cloud:
+    nacos:
+      config:
+        username: zqxsober
+        password: zqxsober
+        server-addr: 81.68.249.232:8848
+        namespace: be03bf80-3f27-4a1d-a5c4-7dc7f38a11c9
+        file-extension: yaml
+        shared-configs:
+          - dataId: ${spring.application.name}-application-${spring.profiles.active}.yaml
+            refresh: true
+logging:
+  config: classpath:logback/logback-spring.xml
+  level:
+    org.org.springframework: info
+    com.alibaba.nacos.client.config.impl: error

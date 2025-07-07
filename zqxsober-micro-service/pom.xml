@@ -12,10 +12,11 @@
     <artifactId>zqxsober-micro-service</artifactId>
     <packaging>pom</packaging>
     <modules>
-        <module>zqxsober-micro-serivce-user</module>
-        <module>zqxsober-micro-serivce-product</module>
-        <module>zqxsober-micro-serivce-order</module>
+        <module>zqxsober-micro-service-user</module>
+        <module>zqxsober-micro-service-product</module>
+        <module>zqxsober-micro-service-order</module>
         <module>zqxsober-micro-service-message</module>
+        <module>zqxsober-micro-service-rule</module>
     </modules>
 
     <properties>
